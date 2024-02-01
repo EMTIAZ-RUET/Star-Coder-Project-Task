@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 
-public class AdminServiceImpl implements  AdminService{
+public class AdminServiceImpl implements  AdminService {
 
     private final TaskRepository taskRepository;
 
@@ -18,15 +18,17 @@ public class AdminServiceImpl implements  AdminService{
     @Override
     public boolean postTask(TaskDto taskDto) {
 
-        try
-        {
+        try {
             task taskk = new task();
             taskk.setName(taskDto.getName());
             taskk.setDescripton(taskDto.getDescripton());
             taskk.setId(taskDto.getId());
             taskk.setType(taskDto.getType());
+        } catch (Exception e) {
+            return false;
         }
-        catch(Exception e){
+
         return false;
-       }
-   }
+    }
+
+}
