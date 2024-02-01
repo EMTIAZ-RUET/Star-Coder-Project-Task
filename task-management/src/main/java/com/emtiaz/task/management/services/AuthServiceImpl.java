@@ -5,6 +5,7 @@ import com.emtiaz.task.management.dtos.UserDto;
 import com.emtiaz.task.management.entities.User;
 import com.emtiaz.task.management.enums.UserRole;
 import com.emtiaz.task.management.repositories.UserRepository;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,22 @@ import org.springframework.stereotype.Service;
 public class AuthServiceImpl implements AuthService{
 
      private final UserRepository userRepository;
+
+     @PostConstruct
+     public void createAdminAccount()
+     {
+        User adminAccount =  userRepository.findByUserRole(UserRole.ADMIN);
+
+        if(adminAccount == null)
+        {
+            User newAdminAccount = new User();
+            newAdminAccount.setName("Admin");
+            newAdminAccount.setUserRole(UserRole.ADMIN);
+            newAdminAccount.setEmail("admin@gmail.com");
+            newAdminAccount.setPassword(new BCryptPasswordEncoder().encode("admin"));
+            userRepository.save(newAdminAccount);
+        }
+     }
 
 
 
