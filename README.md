@@ -20,6 +20,8 @@ JSON payload containing name , email , and password .
 
 8.Accept a POST request with username and password .
 
+9.Add Admin
+
 FrontEnd:
 
 Not Yet Done anything
