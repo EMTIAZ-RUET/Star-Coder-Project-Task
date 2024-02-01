@@ -22,6 +22,8 @@ JSON payload containing name , email , and password .
 
 9.Add Admin
 
+10.Add task
+
 FrontEnd:
 
 Not Yet Done anything
