@@ -1,5 +1,8 @@
 # Star-Coder-Project-Task
 
+
+BackEnd:
+
 1.Create a REST endpoint ( /api/register ) that accepts a POST request with
 JSON payload containing name , email , and password .
 
@@ -16,3 +19,7 @@ JSON payload containing name , email , and password .
 7.Create a REST endpoint ( /api/login ) for user login.
 
 8.Accept a POST request with username and password .
+
+FrontEnd:
+
+Not Yet Done anything
