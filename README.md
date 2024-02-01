@@ -24,8 +24,10 @@ JSON payload containing name , email , and password .
 
 10.Add task
 
-11. Rest api for admin = (/api/admin)
-12. Rest api for task = (/api/task)
+11. Rest api for admin = (/api/admin) POST request with
+JSON payloa
+12. Rest api for task = (/api/task) POST request with
+JSON payloa
 
 FrontEnd:
 
