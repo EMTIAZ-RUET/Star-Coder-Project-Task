@@ -24,6 +24,9 @@ JSON payload containing name , email , and password .
 
 10.Add task
 
+11. Rest api for admin = (/api/admin)
+12. Rest api for task = (/api/task)
+
 FrontEnd:
 
 Not Yet Done anything
