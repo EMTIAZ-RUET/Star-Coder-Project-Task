@@ -5,12 +5,18 @@ import com.emtiaz.task.management.enums.UserRole;
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Data
 @Table(name = "users")
 
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +29,36 @@ public class User {
     private String password;
 
     private UserRole userRole;
+
+    public Collection<? extends GrantedAuthority> getAuthorities()
+    {
+        return List.of(new SimpleGrantedAuthority(userRole.name()));
+    }
+
+    public String getUserName()
+    {
+        return email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    public boolean isAccountNonLocked()
+    {
+
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 
     public Long getId() {
         return Id;
