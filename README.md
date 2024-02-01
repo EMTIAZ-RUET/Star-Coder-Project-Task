@@ -8,3 +8,7 @@ JSON payload containing name , email , and password .
 3.Password Encoding
 
 4.Provide Security
+
+5.Create Table user
+
+6.Update the database
