@@ -12,3 +12,7 @@ JSON payload containing name , email , and password .
 5.Create Table user
 
 6.Update the database
+
+7.Create a REST endpoint ( /api/login ) for user login.
+
+8.Accept a POST request with username and password .
