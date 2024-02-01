@@ -5,4 +5,6 @@ JSON payload containing name , email , and password .
 
 2.Check the email already exist or not
 
-3.provide Security
+3.Password Encoding
+
+4.Provide Security
