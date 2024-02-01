@@ -6,6 +6,7 @@ import com.emtiaz.task.management.entities.User;
 import com.emtiaz.task.management.enums.UserRole;
 import com.emtiaz.task.management.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,7 +24,7 @@ public class AuthServiceImpl implements AuthService{
         User user = new User();
         user.setEmail(signupRequest.getEmail());
         user.setName(signupRequest.getName());
-        user.setPassword(signupRequest.getPassword());
+        user.setPassword(new BCryptPasswordEncoder().encode(signupRequest.getPassword()));
         user.setUserRole(UserRole.USER);
         User createUser =  userRepository.save(user);
 
