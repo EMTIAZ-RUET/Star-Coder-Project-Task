@@ -38,4 +38,24 @@ public class UserDto {
     public void setId(Long id) {
         Id = id;
     }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
+    }
 }
