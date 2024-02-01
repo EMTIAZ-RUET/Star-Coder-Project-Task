@@ -15,7 +15,27 @@ public class UserDto {
 
     private String password;
 
-    private UserRole userrole;
+    private UserRole userRole;
 
 
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
 }
