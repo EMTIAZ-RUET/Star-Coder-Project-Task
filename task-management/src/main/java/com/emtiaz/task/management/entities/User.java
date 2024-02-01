@@ -30,15 +30,60 @@ public class User implements UserDetails {
 
     private UserRole userRole;
 
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return null;
+    }
+
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
+    }
+
     public Collection<? extends GrantedAuthority> getAuthorities()
     {
         return List.of(new SimpleGrantedAuthority(userRole.name()));
     }
 
-    public String getUserName()
-    {
-        return email;
-    }
+
 
     @Override
     public boolean isAccountNonExpired() {
@@ -47,7 +92,7 @@ public class User implements UserDetails {
 
     public boolean isAccountNonLocked()
     {
-
+        return true;
     }
 
     @Override
@@ -60,39 +105,6 @@ public class User implements UserDetails {
         return true;
     }
 
-    public Long getId() {
-        return Id;
-    }
 
-    public UserRole getUserRole() {
-        return userRole;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setUserRole(UserRole userRole) {
-        this.userRole = userRole;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
 }
