@@ -4,9 +4,11 @@ import com.emtiaz.task.management.dtos.TaskDto;
 import com.emtiaz.task.management.entities.task;
 import com.emtiaz.task.management.repositories.TaskRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.scheduling.config.Task;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -43,6 +45,15 @@ public class AdminServiceImpl implements  AdminService {
     public void deleteTask(Long taskId) {
 
         taskRepository.deleteById(taskId);
+    }
+
+    @Override
+    public TaskDto getTaskById(long taskId) {
+
+        Optional<task> optionalCar = taskRepository.findById(taskId);
+
+        return optionalCar.map(task::getTaskDto).orElse(null);
+
     }
 
 }
