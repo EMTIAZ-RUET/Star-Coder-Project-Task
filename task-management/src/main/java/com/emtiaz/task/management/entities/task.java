@@ -1,8 +1,10 @@
 package com.emtiaz.task.management.entities;
 
 
+import com.emtiaz.task.management.dtos.TaskDto;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.scheduling.config.Task;
 
 @Entity
 @Data
@@ -49,4 +51,19 @@ public class task {
     public void setDescripton(String descripton) {
         this.descripton = descripton;
     }
+
+
+    public TaskDto getTaskDto()
+    {
+        TaskDto taskDto = new TaskDto();
+
+        taskDto.setDescripton(descripton);
+        taskDto.setId(Id);
+        taskDto.setName(name);
+        taskDto.setType(type);
+
+        return taskDto;
+    }
+    
+    
 }
