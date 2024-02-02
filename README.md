@@ -24,16 +24,13 @@ JSON payload containing name , email , and password .
 
 10.Add task
 
-11. Rest api for admin = (/api/admin) POST request with
-JSON payload
+11.Add create task
 
-12. Rest api for task = (/api/admin/task) POST request with
-JSON payload
+12.Add delete task
 
-13. Rest api for task = (/api/admin/tasks) POST request with
-JSON payload
+13.Add get all task
 
-14.Rest api for get delete task (/api/admin/task/{taskId});
+
 
 FrontEnd:
 
