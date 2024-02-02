@@ -12,4 +12,6 @@ public interface AdminService {
 
     void deleteTask(Long taskId);
 
+    TaskDto getTaskById(long taskId);
+
 }
