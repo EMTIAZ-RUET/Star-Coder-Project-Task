@@ -46,4 +46,14 @@ public class AdminController {
        return ResponseEntity.noContent().build();
     }
 
+    public ResponseEntity<TaskDto>getPostById(@PathVariable Long taskId)
+    {
+         TaskDto taskDto = adminService.getTaskById(taskId);
+
+         if(taskDto !=null )
+             return ResponseEntity.ok(taskDto);
+
+         return ResponseEntity.notFound().build();
+    }
+
 }
