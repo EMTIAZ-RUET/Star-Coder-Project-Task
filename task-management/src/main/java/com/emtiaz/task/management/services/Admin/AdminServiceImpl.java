@@ -39,4 +39,10 @@ public class AdminServiceImpl implements  AdminService {
         return taskRepository.findAll().stream().map(task::getTaskDto).collect(Collectors.toList());
     }
 
+    @Override
+    public void deleteCar(Long taskId) {
+
+        taskRepository.deleteById(taskId);
+    }
+
 }
