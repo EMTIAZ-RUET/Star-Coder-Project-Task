@@ -40,7 +40,7 @@ public class AdminServiceImpl implements  AdminService {
     }
 
     @Override
-    public void deleteCar(Long taskId) {
+    public void deleteTask(Long taskId) {
 
         taskRepository.deleteById(taskId);
     }
