@@ -6,6 +6,9 @@ import com.emtiaz.task.management.repositories.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 @Service
 @RequiredArgsConstructor
@@ -29,6 +32,11 @@ public class AdminServiceImpl implements  AdminService {
         }
 
         return false;
+    }
+
+    @Override
+    public List<TaskDto> getAllTask() {
+        return taskRepository.findAll().stream().map(task::getTaskDto).collect(Collectors.toList());
     }
 
 }
