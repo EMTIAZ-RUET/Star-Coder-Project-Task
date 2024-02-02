@@ -10,6 +10,6 @@ public interface AdminService {
 
     List<TaskDto> getAllTask();
 
-    void deleteCar(Long carId);
+    void deleteTask(Long taskId);
 
 }
