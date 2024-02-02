@@ -26,8 +26,14 @@ JSON payload containing name , email , and password .
 
 11. Rest api for admin = (/api/admin) POST request with
 JSON payload
-12. Rest api for task = (/api/task) POST request with
+
+12. Rest api for task = (/api/admin/task) POST request with
 JSON payload
+
+13. Rest api for task = (/api/admin/tasks) POST request with
+JSON payload
+
+14.Rest api for get delete task (/api/admin/task/{taskId});
 
 FrontEnd:
 
